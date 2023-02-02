@@ -1,0 +1,114 @@
+{
+    "id": "board",
+    "title": "Board",
+    "fields": [
+        {
+            "id": "name",
+            "dataId": "name",
+            "fieldType": "text",
+            "title": "Name"
+        },
+        {
+            "id": "age",
+            "dataId": "age",
+            "fieldType": "number"
+        },
+        {
+            "id": "salary",
+            "dataId": "salary",
+            "fieldType": "price"
+        },
+        {
+            "id": "department",
+            "dataId": "department",
+            "fieldType": "select",
+            "options": [
+                {
+                    "id": "good",
+                    "title": "Good",
+                    "colorId": "green",
+                    "order": 2
+                },
+                {
+                    "id": "veryGood",
+                    "title": "Very good",
+                    "colorId": "pink",
+                    "order": 1
+                }
+            ]
+        },
+        {
+            "id": "skills",
+            "dataId": "skills",
+            "fieldType": "multiSelect",
+            "options": [
+                {
+                    "id": "carpenter",
+                    "title": "Carpenter",
+                    "colorId": "gold",
+                    "order": 2
+                },
+                {
+                    "id": "maker",
+                    "title": "Maker",
+                    "colorId": "purple",
+                    "order": 1
+                }
+            ]
+        },
+        {
+            "id": "status",
+            "dataId": "status",
+            "fieldType": "status",
+            "options": [
+                {
+                    "id": "notStarted",
+                    "title": "Not started",
+                    "isDefault": true,
+                    "order": 1,
+                    "groupId": "toDo",
+                    "colorId": "gray"
+                },
+                {
+                    "id": "inProgress",
+                    "title": "In progress",
+                    "colorId": "blue",
+                    "groupId": "inProgress",
+                    "order": 2
+                },
+                {
+                    "id": "done",
+                    "title": "Done",
+                    "colorId": "green",
+                    "order": 3,
+                    "groupId": "complete"
+                }
+            ]
+        },
+        {
+            "id": "birthday",
+            "dataId": "birthday",
+            "fieldType": "date"
+        },
+        {
+            "id": "vegetarian",
+            "dataId": "Vegetarian",
+            "fieldType": "checkbox"
+        },
+        {
+            "id": "website",
+            "dataId": "Website",
+            "fieldType": "url"
+        },
+        {
+            "id": "email",
+            "dataId": "Email",
+            "fieldType": "email"
+        },
+        {
+            "id": "phone",
+            "dataId": "Phone",
+            "fieldType": "phone"
+        }
+    ]
+}

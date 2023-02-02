@@ -1,0 +1,47 @@
+{
+    "multi-base-ui": {
+        "id": "multi-base-ui",
+        "path": "packages/multi-base-ui",
+        "types": "src/types.ts"
+    },
+    "multi-board": {
+        "id": "multi-board",
+        "path": "packages/multi-board",
+        "types": "src/types.ts"
+    },
+    "multi-calendar": {
+        "id": "multi-calendar",
+        "path": "packages/multi-calendar",
+        "types": "src/types.ts"
+    },
+    "multi-core": {
+        "id": "multi-core",
+        "path": "packages/multi-core",
+        "types": "src/types.ts"
+    },
+    "multi-gallery": {
+        "id": "multi-gallery",
+        "path": "packages/multi-gallery",
+        "types": "src/types.ts"
+    },
+    "multi-list": {
+        "id": "multi-list",
+        "path": "packages/multi-list",
+        "types": "src/types.ts"
+    },
+    "multi-sheet": {
+        "id": "multi-sheet",
+        "path": "packages/multi-sheet",
+        "types": "src/types.ts"
+    },
+    "multi-table": {
+        "id": "multi-table",
+        "path": "packages/multi-table",
+        "types": "src/types.ts"
+    },
+    "multi-timeline": {
+        "id": "multi-timeline",
+        "path": "packages/multi-timeline",
+        "types": "src/types.ts"
+    }
+}

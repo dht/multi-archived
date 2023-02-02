@@ -1,0 +1,52 @@
+views:
+    - id: board
+      title: Board 1
+      viewType: board
+      sheetOptions:
+          titleFieldId: summary
+      tabs:
+          - id: todo
+            title: Todo
+            lanes:
+                - id: backlog
+                  title: Todo
+                  dataTags: ['$other']
+                - id: doing
+                  title: Doing
+                  dataTags: ['doing']
+                - id: done
+                  title: Done
+                  dataTags: ['done']
+          - id: priority
+            title: Priority
+            lanes:
+                - id: unassigned
+                  title: Unassigned
+                  dataTags: ['$other']
+                - id: important
+                  title: important
+                  dataTags: ['important']
+                - id: urgent
+                  title: urgent
+                  dataTags: ['urgent']
+                - id: importantAndUrgent
+                  title: Important & urgent
+                  dataTags: ['importantAndUrgent']
+                - id: none
+                  title: None
+                  dataTags: ['none']
+          - id: when
+            title: When
+            lanes:
+                - id: today
+                  title: Today
+                  dataTags: ['$today']
+                - id: tomorrow
+                  title: Tomorrow
+                  dataTags: ['$tomorrow']
+                - id: later
+                  title: Later
+                  dataTags: ['later']
+                - id: unassigned
+                  title: Unassigned
+                  dataTags: ['$other']

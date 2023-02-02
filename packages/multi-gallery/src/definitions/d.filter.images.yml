@@ -1,0 +1,26 @@
+id: ImageFilter
+fields:
+    - id: tags
+      title: Tags
+      cellType: tags
+      optionSelectorId: $imageTags
+      allowMultiple: false
+    - id: ratio
+      title: Orientation
+      cellType: number
+      options:
+          - id: landscape
+            text: Landscape
+            min: 0
+            max: 1
+          - id: portrait
+            text: Portrait
+            min: 1
+      allowMultiple: true
+sort:
+    - id: title
+      text: Title
+      value: title
+    - id: ratio
+      text: Ratio
+      value: ratio

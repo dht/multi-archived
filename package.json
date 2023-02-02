@@ -1,0 +1,27 @@
+{
+    "name": "gdi-root",
+    "private": true,
+    "version": "0.0.26",
+    "scripts": {
+        "prepare": "husky install"
+    },
+    "workspaces": [
+        "clients/*",
+        "packages/*",
+        "views/*"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jest": "^27.5.1",
+        "base-types": "^0.0.4",
+        "husky": "^8.0.1",
+        "jest": "^28.1.0",
+        "ts-jest": "^28.0.2",
+        "typescript": "^4.6.4"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "sh ./scripts/pre-commit-prevent-large-files.sh"
+        }
+    }
+}

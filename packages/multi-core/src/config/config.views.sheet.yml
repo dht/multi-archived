@@ -1,0 +1,60 @@
+views:
+    - id: sheet
+      title: Sheet 1
+      viewType: sheet
+      sort: sort_1
+      filter: filter_1
+      sheetOptions:
+          wrapAllColumns: true
+      fields:
+          - id: fieldInstance_age
+            fieldId: age
+            title: Age
+            order: 2
+          - id: fieldInstance_name
+            fieldId: name
+            title: Name
+            order: 1
+            style:
+                width: 109
+                noWrap: true
+          - id: fieldInstance_salary
+            fieldId: salary
+            title: Salary
+            order: 3
+            options:
+                showAs: bar
+                colorId: green
+                showNumber: true
+          - id: fieldInstance_department
+            fieldId: department
+            title: Department
+            order: 4
+          - id: fieldInstance_skills
+            fieldId: skills
+            title: Skills
+            order: 5
+          - id: fieldInstance_status
+            fieldId: status
+            title: Status
+            order: 6
+          - id: fieldInstance_birthday
+            fieldId: birthday
+            title: Birthday
+            order: 7
+          - id: fieldInstance_vegetarian
+            fieldId: vegetarian
+            title: Vegetarian
+            order: 8
+          - id: fieldInstance_website
+            fieldId: website
+            title: Website
+            order: 9
+          - id: fieldInstance_email
+            fieldId: email
+            title: Email
+            order: 10
+          - id: fieldInstance_phone
+            fieldId: phone
+            title: Phone
+            order: 11

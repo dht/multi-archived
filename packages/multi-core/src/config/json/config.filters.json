@@ -1,0 +1,30 @@
+{
+    "filters": [
+        {
+            "id": "filter_1",
+            "fieldId": "age",
+            "numberOptions": {
+                "relation": "<="
+            },
+            "value": 10
+        },
+        {
+            "id": "filter_2",
+            "fieldId": "birthday",
+            "dateOptions": {
+                "relation": "this",
+                "unit": "week"
+            },
+            "value": 0
+        },
+        {
+            "id": "filter_3",
+            "fieldId": "name",
+            "stringOptions": {
+                "relation": "this",
+                "unit": "week"
+            },
+            "value": 0
+        }
+    ]
+}

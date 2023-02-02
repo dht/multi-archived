@@ -1,0 +1,18 @@
+views:
+    - id: gallery
+      title: Gallery 1
+      viewType: gallery
+      galleryOptions:
+          itemType: person
+          fixedRatio: 0.8
+          columns: 10
+          overlayType: absolute
+      fields:
+          - id: tags
+            fieldId: tags
+            order: 1
+            locationId: topLeft
+          - id: fullName
+            fieldId: fullName
+            order: 2
+            locationId: bottomRight

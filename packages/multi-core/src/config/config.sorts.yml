@@ -1,0 +1,9 @@
+sorts:
+    - id: sort_1
+      fieldId: name
+      order: 1
+      direction: asc
+    - id: sort_2
+      fieldId: age
+      order: 2
+      ascending: desc

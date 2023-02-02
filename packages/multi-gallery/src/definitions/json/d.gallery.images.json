@@ -1,0 +1,6 @@
+{
+    "id": "ImageGallery",
+    "header": "Images",
+    "columns": 5,
+    "itemType": "image"
+}
