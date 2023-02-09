@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { Content, TabsWrapper, Wrapper } from './Multi.style';
+import {
+    Content,
+    H1,
+    Header,
+    Stats,
+    TabsWrapper,
+    Wrapper,
+} from './Multi.style';
 import { Gallery } from '@mult/gallery';
 import { Board } from '@mult/board';
 import { Sheet } from '@mult/sheet';
@@ -54,12 +61,18 @@ export function Multi(props: MultiProps) {
     return (
         <Wrapper className='Multi-wrapper' data-testid='Multi-wrapper'>
             <TabsWrapper>
+                <Header>
+                    <H1>People</H1>
+                </Header>
                 <Tabs
                     tabs={tabs.filter((tab) => !tab.isHidden)}
                     fontSize={17}
                     selectedTabId={currentTabId}
                     onChange={setCurrentTabId}
                 />
+                <Stats>
+                    <span>5</span> items
+                </Stats>
             </TabsWrapper>
             <Content>{renderInner()}</Content>
         </Wrapper>
