@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import {
     Content,
     H1,
@@ -12,6 +12,8 @@ import { Board } from '@mult/board';
 import { Sheet } from '@mult/sheet';
 import { Tabs } from '@mult/ui';
 import { tabs } from './Multi.data';
+import { FilterContext } from '../../context/Filter.context';
+import { CrudContext } from '../../context/Crud.context';
 
 export type MultiProps = {
     id: string;
@@ -31,12 +33,31 @@ export type MultiProps = {
     newDataExtra?: Json;
     tags?: IOptions;
     dispatch: any;
+    views?: string[];
 };
 
 export function Multi(props: MultiProps) {
-    const { data, definitions, itemType, callbacks } = props;
+    const {
+        id,
+        definitions,
+        allOptions,
+        customView: CustomView,
+        customView2: CustomView2,
+        itemType,
+        views = [],
+    } = props;
+
     const { bucket, sheet } = definitions;
     const [currentTabId, setCurrentTabId] = useState('board');
+
+    const contextFilter = useContext(FilterContext);
+    const contextCrud = useContext(CrudContext);
+
+    const customViewExists = typeof CustomView !== 'undefined';
+    const customView2Exists = typeof CustomView2 !== 'undefined';
+
+    const { data = [], multiBar } = contextFilter;
+    const { state, patchState, callbacks, config } = contextCrud;
 
     function renderInner() {
         switch (currentTabId) {
@@ -51,21 +72,46 @@ export function Multi(props: MultiProps) {
                     />
                 );
             case 'board':
-                return <Board config={bucket} data={data} />;
+                return (
+                    <Board config={bucket} data={data} callbacks={callbacks} />
+                );
             case 'sheet':
-                return <Sheet config={sheet} data={data} />;
+                return (
+                    <Sheet
+                        config={config.sheet}
+                        data={data}
+                        allOptions={allOptions}
+                        onChange={(itemId: string, change: Json) =>
+                            callbacks.onItemAction(itemId, 'change', change)
+                        }
+                        onDelete={(itemId: string) =>
+                            callbacks.onItemAction(itemId, 'delete')
+                        }
+                        onNew={(data: Json) => {
+                            callbacks.onAction('newWithData', data);
+                        }}
+                    />
+                );
             default:
                 return null;
         }
     }
+
+    const tabs = useMemo(() => {
+        return views.map((view) => ({
+            id: view,
+            label: view,
+        }));
+    }, []);
+
     return (
         <Wrapper className='Multi-wrapper' data-testid='Multi-wrapper'>
             <TabsWrapper>
                 <Header>
-                    <H1>People</H1>
+                    <H1>{id}</H1>
                 </Header>
                 <Tabs
-                    tabs={tabs.filter((tab) => !tab.isHidden)}
+                    tabs={tabs}
                     fontSize={17}
                     selectedTabId={currentTabId}
                     onChange={setCurrentTabId}

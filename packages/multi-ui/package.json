@@ -1,6 +1,6 @@
 {
     "name": "@mult/ui",
-    "version": "0.4.7",
+    "version": "0.4.8",
     "scripts": {
         "build": "tsc & vite build && npm run scss",
         "test": "jest",
@@ -9,6 +9,7 @@
         "watch": "nodemon -x \"npm run build\""
     },
     "dependencies": {
+        "@mult/base-ui": "^0.4.9",
         "react-use": "^17.4.0",
         "shared-base": "^0.4.8",
         "styled-components": "^5.3.5"

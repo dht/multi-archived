@@ -10,10 +10,11 @@ export type IMultiConfig = {
 export type IMultiView = {
     id: string;
     title: string;
-    viewType: MultiViewType;
-    sort: string;
-    filter: string;
-    fields: IMultiFieldInstance[];
+    order?: number;
+    viewType: MultiViewType | string;
+    fields?: IMultiFieldInstance[];
+    sort?: string;
+    filter?: string;
     boardOptions?: Partial<IBoardOptions>;
     calendarOptions?: Partial<ICalendarOptions>;
     galleryOptions?: Partial<IGalleryOptions>;
@@ -22,6 +23,7 @@ export type IMultiView = {
     tableOptions?: Partial<ITableOptions>;
     timelineOptions?: Partial<ITimelineOptions>;
     oneOptions?: Partial<IOneOptions>;
+    tabs?: IMultiBoardTab[];
 };
 
 export type FieldType =
@@ -50,7 +52,7 @@ export type MultiViewType =
 export type IMultiOption = {
     id: string;
     title: string;
-    colorId: Color;
+    colorId: Color | string;
     order: number;
 };
 
@@ -58,7 +60,7 @@ export type IMultiField = {
     id: string;
     title: string;
     dataId: string;
-    fieldType: FieldType;
+    fieldType: FieldType | string;
 };
 
 export type IMultiFieldInstance = {
@@ -72,8 +74,8 @@ export type IMultiFieldInstance = {
 };
 
 export type IMultiFieldInstanceOptions = {
-    showAs: 'bar' | 'pie' | 'none';
-    colorId: Color;
+    showAs: 'bar' | 'pie' | 'none' | string;
+    colorId: Color | string;
     showNumber: boolean;
 };
 
@@ -94,7 +96,7 @@ export type IGalleryOptions = {
     itemType: string;
     fixedRatio: number;
     column: number;
-    overlayType: 'none' | 'relative' | 'absolute';
+    overlayType: 'none' | 'relative' | 'absolute' | string;
 };
 
 export type IListOptions = {};
@@ -114,7 +116,7 @@ export type IMultiSort = {
     id: string;
     fieldId: string;
     order: number;
-    direction?: SortDirection;
+    direction?: SortDirection | string;
 };
 
 export type SortDirection = 'asc' | 'desc' | 'none';
@@ -131,6 +133,8 @@ export type RelationNumber =
     | 'notEmpty';
 
 export type RelationDate = 'past' | 'this' | 'next';
+
+export type ISelectionMode = 'none' | 'choose' | 'single' | 'multiple';
 
 export type DateUnit = 'day' | 'week' | 'month' | 'year';
 
@@ -154,16 +158,16 @@ export type IMultiFilter = {
 };
 
 export type IFilterNumberOptions = {
-    relation: RelationNumber;
+    relation: RelationNumber | string;
 };
 
 export type IFilterDateOptions = {
-    relation: RelationDate;
-    unit: DateUnit;
+    relation: RelationDate | string;
+    unit: DateUnit | string;
 };
 
 export type IFilterStringOptions = {
-    relation: RelationString;
+    relation: RelationString | string;
 };
 
 // =========== Colors ===========
@@ -180,3 +184,62 @@ export type Color =
     | 'red';
 
 export type IColors = Record<Color, string>;
+
+export type IMultiBoardTab = {
+    id: string;
+    title: string;
+    lanes: IMultiBoardLane[];
+};
+
+export type IMultiBoardLane = {
+    id: string;
+    title: string;
+    dataTags: string[];
+};
+
+export type WithChildren<T> = T & {
+    children?: JSX.Element | JSX.Element[];
+};
+
+export type ICrudOptions = {
+    doubleClickActionId: string; // ItemActionType;
+    newDataExtra?: Json;
+    allOptions?: Json;
+    allDetails?: any;
+    allMethods?: any;
+};
+
+export type ICrudState = {
+    viewMode: MultiViewType;
+};
+
+export type ItemType =
+    // CMS
+    | 'widget'
+    | 'page'
+    | 'pageInstance'
+    | 'image'
+    | 'layout'
+    | 'layoutItem'
+    | 'template'
+    | 'article'
+    | 'comment'
+
+    // CRM & sales
+    | 'person'
+    | 'lead'
+    | 'sale'
+    | 'cart'
+    | 'order'
+    | 'coupon'
+    | 'product'
+    | 'campaign'
+
+    // Project management
+    | 'ticket'
+    | 'project'
+
+    // Other
+    | 'inbox'
+    | 'link'
+    | 'event';

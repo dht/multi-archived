@@ -1,6 +1,6 @@
 {
     "name": "@mult/core",
-    "version": "0.4.2",
+    "version": "0.4.10",
     "scripts": {
         "build": "tsc & vite build && npm run scss",
         "test": "jest",
@@ -9,9 +9,18 @@
         "watch": "nodemon -x \"npm run build\""
     },
     "dependencies": {
+        "@gdi/hooks": "^0.4.3",
+        "@gdi/language": "^0.4.2",
+        "@gdi/web-base-ui": "^0.4.7",
         "@hookform/resolvers": "^2.9.7",
+        "@mult/board": "^0.4.3",
+        "@mult/gallery": "^0.4.4",
+        "@mult/sheet": "^0.4.3",
+        "@mult/ui": "^0.4.8",
+        "react-draggable": "^4.4.5",
         "react-hook-form": "^7.34.0",
         "react-use": "^17.4.0",
+        "redux-store-generator": "^0.9.89",
         "shared-base": "^0.4.8",
         "styled-components": "^5.3.5",
         "yup": "^0.32.11"
